@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+HESLab | Hydro-Environmental System Laboratory
+</title>
+
+<style>
+
+:root{
+    --primary:#0b2948;
+    --secondary:#1e88e5;
+    --light:#f5f7fa;
+    --text:#333;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    color:var(--text);
+    background:var(--light);
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    background:rgba(11,41,72,.95);
+
+    backdrop-filter:blur(10px);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:15px 40px;
+
+    z-index:999;
+}
+
+.logo{
+    color:white;
+    font-size:1.4rem;
+    font-weight:700;
+}
+
+.menu{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#87cefa;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.55)
+    ),
+    url("assets/images/gallery/01.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+
+    padding:100px 20px 50px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h2{
+    font-weight:300;
+    letter-spacing:1px;
+}
+
+.hero h1{
+    margin:20px 0;
+    font-size:4rem;
+}
+
+.hero p{
+    font-size:1.15rem;
+    line-height:1.8;
+}
+
+.hero-buttons{
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    margin:5px;
+
+    border-radius:8px;
+
+    text-decoration:none;
+    color:white;
+
+    background:#1e88e5;
+}
+
+.btn.secondary{
+    background:#e53935;
+}
+
+/* ==========================
+   SECTION
+========================== */
+
+.section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    color:var(--primary);
+    margin-bottom:40px;
+}
+
+/* ==========================
+   GALLERY
+========================== */
+
+.gallery-container{
+    max-width:1200px;
+    margin:auto;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:16px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.15);
+}
+
+.gallery-container img{
+    width:100%;
+    height:650px;
+    object-fit:cover;
+
+    display:block;
+
+    transition:opacity .6s ease;
+}
+
+.gallery-overlay{
+
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+
+    padding:30px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        transparent,
+        rgba(0,0,0,.8)
+    );
+}
+
+.gallery-overlay h3{
+    font-size:1.8rem;
+}
+
+.gallery-btn{
+
+    position:absolute;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(0,0,0,.45);
+
+    color:white;
+
+    cursor:pointer;
+    font-size:1.3rem;
+}
+
+.gallery-btn:hover{
+    background:rgba(0,0,0,.8);
+}
+
+.prev{
+    left:15px;
+}
+
+.next{
+    right:15px;
+}
+
+.gallery-dots{
+    position:absolute;
+
+    bottom:15px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+    gap:10px;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+
+    background:rgba(255,255,255,.4);
+}
+
+.dot.active{
+    background:white;
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.card-container{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
+}
+
+.card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.12);
+}
+
+.card h3{
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+
+    background:var(--primary);
+
+    color:white;
+
+    text-align:center;
+
+    padding:50px;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:2.4rem;
+    }
+
+    .gallery-container img{
+        height:320px;
+    }
+
+    .gallery-overlay h3{
+        font-size:1.1rem;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">
+HESLab
+</div>
+
+<ul class="menu">
+<li>#Beranda</a></li>
+<li><Profil</a></li>
+<li>#Riset</a></li>
+<li><a href="#">Publikasi</a></li & Layanan</a></li>
+<li><Pengajaran</a></li>
+<li><Berita</a></li>
+<li><Kontak</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h2>
+Berilmu, Bermanfaat, dan Berdampak
+</h2>
+
+<h1>
+Hydro-Environmental System Laboratory
+</h1>
+
+<p>
+Laboratorium riset Universitas Pertamina yang berfokus pada
+pemodelan hidrologi, manajemen risiko bencana air,
+dan dampak perubahan iklim.
+</p>
+
+<div class="hero-buttons">
+
+<a class="l Data Hidrologi
+</a>
+
+#
+🚨 FEWS HESLab
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Galeri HESLab
+</h2>
+
+<div class="gallery-container">
+
+<img
+id="galleryImage"
+src=""
+alt="Galeri HESLab">
+
+<div class="gallery-overlay">
+
+="gallery-btn prev"
+onclick="prevImage()">
+
+❮
+
+</button>
+
+<button
+class="gallery-btn next"
+onclick="nextImage()">
+
+❯
+
+</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>
+Hydro-Environmental System Laboratory
+</h3>
+
+<p>
+Universitas Pertamina
+</p>
+
+<p>
+Menghubungkan Data, Model, dan Keputusan
+</p>
+
+</footer>
+
+<script>
+
+let gallery = [];
+let currentIndex = 0;
+
+const imageElement =
+document.getElementById("galleryImage");
+
+const titleElement =
+document.getElementById("galleryTitle");
+
+fetch("assets/data/gallery.json")
+.then(response => response.json())
+.then(data => {
+
+    gallery = data;
+
+    if(gallery.length === 0){
+        return;
+    }
+
+    showImage(0);
+
+    setInterval(nextImage,5000);
+
+});
+
+function showImage(index){
+
+    imageElement.style.opacity = 0;
+
+    setTimeout(() => {
+
+        imageElement.src =
+            gallery[index].image;
+
+        titleElement.textContent =
+            gallery[index].title;
+
+        imageElement.style.opacity = 1;
+
+    },300);
+
+}
+
+function nextImage(){
+
+    currentIndex++;
+
+    if(currentIndex >= gallery.length){
+        currentIndex = 0;
+    }
+
+    showImage(currentIndex);
+}
+
+function prevImage(){
+
+    currentIndex--;
+
+    if(currentIndex < 0){
+        currentIndex =
+        gallery.length - 1;
+    }
+
+    showImage(currentIndex);
+}
+
+</script>
+
+</body>
+</html>

@@ -2,6 +2,7 @@
 <html lang="id">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -24,37 +25,39 @@ HESLab | Hydro-Environmental System Laboratory
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
     font-family:'Segoe UI',sans-serif;
     color:var(--text);
-    background:var(--light);
+    background:#fff;
 }
 
-/* ==========================
-   NAVBAR
-========================== */
+a{
+    text-decoration:none;
+}
+
+/* =====================================
+   NAVIGATION
+===================================== */
 
 .navbar{
+
     position:fixed;
     top:0;
     left:0;
+
     width:100%;
 
     background:rgba(11,41,72,.95);
 
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(8px);
+
+    z-index:999;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
 
     padding:15px 40px;
-
-    z-index:999;
 }
 
 .logo{
@@ -66,22 +69,20 @@ body{
 .menu{
     display:flex;
     list-style:none;
-    gap:20px;
+    gap:25px;
 }
 
 .menu a{
     color:white;
-    text-decoration:none;
-    transition:.3s;
 }
 
 .menu a:hover{
-    color:#87cefa;
+    color:#7dc4ff;
 }
 
-/* ==========================
+/* =====================================
    HERO
-========================== */
+===================================== */
 
 .hero{
 
@@ -104,16 +105,15 @@ body{
     text-align:center;
     color:white;
 
-    padding:100px 20px 50px;
+    padding:120px 20px 50px;
 }
 
 .hero-content{
-    max-width:900px;
+    max-width:1000px;
 }
 
 .hero h2{
     font-weight:300;
-    letter-spacing:1px;
 }
 
 .hero h1{
@@ -122,7 +122,7 @@ body{
 }
 
 .hero p{
-    font-size:1.15rem;
+    font-size:1.2rem;
     line-height:1.8;
 }
 
@@ -131,70 +131,101 @@ body{
 }
 
 .btn{
+
     display:inline-block;
-    padding:14px 28px;
+
+    padding:14px 25px;
+
     margin:5px;
 
     border-radius:8px;
 
-    text-decoration:none;
-    color:white;
-
     background:#1e88e5;
+
+    color:white;
 }
 
-.btn.secondary{
+.btn-danger{
     background:#e53935;
 }
 
-/* ==========================
+/* =====================================
    SECTION
-========================== */
+===================================== */
 
 .section{
     padding:80px 8%;
 }
 
 .section-title{
+
     text-align:center;
+
     color:var(--primary);
+
     margin-bottom:40px;
 }
 
-/* ==========================
+/* =====================================
+   QUICK ACCESS
+===================================== */
+
+.quick-links{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.quick-link{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 3px 15px rgba(0,0,0,.08);
+
+    text-align:center;
+}
+
+/* =====================================
    GALLERY
-========================== */
+===================================== */
 
 .gallery-container{
-    max-width:1200px;
-    margin:auto;
 
     position:relative;
 
+    max-width:1200px;
+
+    margin:auto;
+
     overflow:hidden;
 
-    border-radius:16px;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.15);
+    border-radius:15px;
 }
 
 .gallery-container img{
+
     width:100%;
     height:650px;
+
     object-fit:cover;
-
-    display:block;
-
-    transition:opacity .6s ease;
 }
 
 .gallery-overlay{
 
     position:absolute;
-    bottom:0;
+
     left:0;
     right:0;
+    bottom:0;
 
     padding:30px;
 
@@ -202,38 +233,31 @@ body{
 
     background:
     linear-gradient(
-        transparent,
-        rgba(0,0,0,.8)
+      transparent,
+      rgba(0,0,0,.8)
     );
-}
-
-.gallery-overlay h3{
-    font-size:1.8rem;
 }
 
 .gallery-btn{
 
     position:absolute;
+
     top:50%;
 
-    transform:translateY(-50%);
+    transform:
+    translateY(-50%);
 
     width:50px;
     height:50px;
 
     border:none;
-    border-radius:50%;
 
-    background:rgba(0,0,0,.45);
+    background:
+    rgba(0,0,0,.5);
 
     color:white;
 
     cursor:pointer;
-    font-size:1.3rem;
-}
-
-.gallery-btn:hover{
-    background:rgba(0,0,0,.8);
 }
 
 .prev{
@@ -244,40 +268,16 @@ body{
     right:15px;
 }
 
-.gallery-dots{
-    position:absolute;
+/* =====================================
+   CARDS
+===================================== */
 
-    bottom:15px;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    display:flex;
-    gap:10px;
-}
-
-.dot{
-    width:12px;
-    height:12px;
-    border-radius:50%;
-
-    background:rgba(255,255,255,.4);
-}
-
-.dot.active{
-    background:white;
-}
-
-/* ==========================
-   CARD
-========================== */
-
-.card-container{
+.card-grid{
 
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(260px,1fr));
+    repeat(auto-fit,minmax(250px,1fr));
 
     gap:25px;
 }
@@ -298,10 +298,8 @@ body{
 
 .card:hover{
 
-    transform:translateY(-8px);
-
-    box-shadow:
-    0 15px 30px rgba(0,0,0,.12);
+    transform:
+    translateY(-5px);
 }
 
 .card h3{
@@ -309,9 +307,23 @@ body{
     margin-bottom:15px;
 }
 
-/* ==========================
+/* =====================================
+   NEWS
+===================================== */
+
+.news-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:25px;
+}
+
+/* =====================================
    FOOTER
-========================== */
+===================================== */
 
 footer{
 
@@ -321,37 +333,48 @@ footer{
 
     text-align:center;
 
-    padding:50px;
+    padding:60px 20px;
 }
 
-/* ==========================
+.footer-links{
+
+    margin-top:20px;
+}
+
+.footer-links a{
+
+    color:white;
+
+    margin:0 10px;
+}
+
+/* =====================================
    MOBILE
-========================== */
+===================================== */
 
 @media(max-width:768px){
 
     .navbar{
+
         flex-direction:column;
         gap:10px;
     }
 
     .menu{
+
         flex-wrap:wrap;
         justify-content:center;
     }
 
     .hero h1{
-        font-size:2.4rem;
+
+        font-size:2.2rem;
     }
 
     .gallery-container img{
+
         height:320px;
     }
-
-    .gallery-overlay h3{
-        font-size:1.1rem;
-    }
-
 }
 
 </style>
@@ -360,6 +383,8 @@ footer{
 
 <body>
 
+<header>
+
 <nav class="navbar">
 
 <div class="logo">
@@ -367,13 +392,16 @@ HESLab
 </div>
 
 <ul class="menu">
+
 <li>#Beranda</a></li>
-<li><Profil</a></li>
+<li>#Profil</a></li>
 <li>#Riset</a></li>
-<li><a href="#">Publikasi</a></li & Layanan</a></li>
-<li><Pengajaran</a></li>
-<li><Berita</a></li>
-<li><Kontak</a></li>
+<li>#Publikasi</a></li>
+<li>#Data & Layanan</a></li>
+<li>#Pengajaran</a></li>
+<li>#Berita & Opini</a></li>
+<li>#Kontak</a></li>
+
 </ul>
 
 </nav>
@@ -392,19 +420,52 @@ Hydro-Environmental System Laboratory
 
 <p>
 Laboratorium riset Universitas Pertamina yang berfokus pada
-pemodelan hidrologi, manajemen risiko bencana air,
-dan dampak perubahan iklim.
+hidrologi, hidrometeorologi, sumber daya air,
+mitigasi risiko bencana, dan perubahan iklim.
 </p>
 
 <div class="hero-buttons">
 
-<a class="l Data Hidrologi
+#
+📊 Portal Data Hidrologi
 </a>
 
 #
 🚨 FEWS HESLab
 </a>
 
+</div>
+
+</div>
+
+</section>
+
+</header>
+
+<main>
+
+<section class="section">
+
+<h2 class="section-title">
+Akses Cepat
+</h2>
+
+<div class="quick-links">
+
+<div class="quick-link">
+📊 Portal Data
+</div>
+
+<div class="quick-link">
+🚨 FEWS HESLab
+</div>
+
+<div class="quick-link">
+🌊 Inflow Forecasting
+</div>
+
+<div class="quick-link">
+🌧️ Laporan Curah Hujan
 </div>
 
 </div>
@@ -419,31 +480,124 @@ Galeri HESLab
 
 <div class="gallery-container">
 
-<img
-id="galleryImage"
-src=""
-alt="Galeri HESLab">
+
 
 <div class="gallery-overlay">
 
-="gallery-btn prev"
+<h3 id="galleryTitle"></h3>
+
+</div>
+
+<button
+class="gallery-btn prev"
 onclick="prevImage()">
-
 ❮
-
 </button>
 
 <button
 class="gallery-btn next"
 onclick="nextImage()">
-
 ❯
-
 </button>
 
 </div>
 
 </section>
+
+<section class="section">
+
+<h2 class="section-title">
+Data dan Produk Riset
+</h2>
+
+<div class="card-grid">
+
+<div class="card">
+<h3>🌧️ Data Hujan GSMaP</h3>
+<p>Data hujan satelit Indonesia.</p>
+</div>
+
+<div class="card">
+<h3>📊 Curah Hujan Harian</h3>
+<p>Analisis curah hujan Indonesia.</p>
+</div>
+
+<div class="card">
+<h3>🌊 Inflow Forecasting</h3>
+<p>Prakiraan debit sungai.</p>
+</div>
+
+<div class="card">
+<h3>🚨 FEWS HESLab</h3>
+<p>Flood Early Warning System.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Tentang HESLab
+</h2>
+
+<p>
+Hydro-Environmental System Laboratory (HESLab) merupakan
+laboratorium riset Universitas Pertamina yang fokus pada
+hidrologi, hidrometeorologi, sumber daya air,
+serta mitigasi risiko bencana berbasis data dan pemodelan.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Fokus Penelitian
+</h2>
+
+<div class="card-grid">
+
+<div class="card">☔ Analisis Hujan Satelit</div>
+<div class="card">🌊 Pemodelan Hidrologi</div>
+<div class="card">🚨 Flood Forecasting & FEWS</div>
+<div class="card">🌍 Risiko Banjir</div>
+<div class="card">🛰️ Sistem Informasi Hidrologi</div>
+<div class="card">🤖 AI dan Data Science</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Berita Terbaru
+</h2>
+
+<div class="news-grid">
+
+<div class="card">
+<h3>Workshop FEWS</h3>
+<p>Pengembangan sistem peringatan dini banjir.</p>
+</div>
+
+<div class="card">
+<h3>Publikasi Baru</h3>
+<p>Artikel terbaru tentang forecasting debit.</p>
+</div>
+
+<div class="card">
+<h3>Field Survey</h3>
+<p>Kegiatan survei lapangan dan validasi model.</p>
+</div>
+
+</div>
+
+</section>
+
+</main>
 
 <footer>
 
@@ -458,6 +612,14 @@ Universitas Pertamina
 <p>
 Menghubungkan Data, Model, dan Keputusan
 </p>
+
+<div class="footer-links">
+
+#Google Scholar</a>
+#ORCID</a>
+#GitHub</a>
+
+</div>
 
 </footer>
 
@@ -485,46 +647,32 @@ fetch("assets/data/gallery.json")
     showImage(0);
 
     setInterval(nextImage,5000);
-
 });
 
 function showImage(index){
 
-    imageElement.style.opacity = 0;
+    imageElement.src =
+    gallery[index].image;
 
-    setTimeout(() => {
-
-        imageElement.src =
-            gallery[index].image;
-
-        titleElement.textContent =
-            gallery[index].title;
-
-        imageElement.style.opacity = 1;
-
-    },300);
-
+    titleElement.textContent =
+    gallery[index].title;
 }
 
 function nextImage(){
 
-    currentIndex++;
-
-    if(currentIndex >= gallery.length){
-        currentIndex = 0;
-    }
+    currentIndex =
+    (currentIndex + 1) %
+    gallery.length;
 
     showImage(currentIndex);
 }
 
 function prevImage(){
 
-    currentIndex--;
-
-    if(currentIndex < 0){
-        currentIndex =
-        gallery.length - 1;
-    }
+    currentIndex =
+    (currentIndex - 1 +
+    gallery.length) %
+    gallery.length;
 
     showImage(currentIndex);
 }
