@@ -1,6 +1,5 @@
 let galleryImages = [];
 let currentIndex = 0;
-let autoplay;
 
 const imageElement =
     document.getElementById("galleryImage");
@@ -18,9 +17,9 @@ fetch("assets/data/gallery.json")
             return;
         }
 
-        showImage(currentIndex);
+        showImage(0);
 
-        autoplay = setInterval(() => {
+        setInterval(() => {
             nextImage();
         }, 5000);
 
