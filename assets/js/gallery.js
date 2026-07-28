@@ -1,25 +1,69 @@
-fetch('assets/data/gallery.json')
-.then(response => response.json())
-.then(images => {
+let galleryImages = [];
+let currentIndex = 0;
+let autoplay;
 
-    let index = 0;
+const imageElement =
+    document.getElementById("galleryImage");
 
-    const img =
-    document.getElementById('galleryImage');
+const captionElement =
+    document.getElementById("galleryCaption");
 
-    function changeImage(){
+fetch("assets/data/gallery.json")
+    .then(response => response.json())
+    .then(data => {
 
-        img.src = images[index].image;
+        galleryImages = data;
 
-        index++;
-
-        if(index >= images.length){
-            index = 0;
+        if (galleryImages.length === 0) {
+            return;
         }
+
+        showImage(currentIndex);
+
+        autoplay = setInterval(() => {
+            nextImage();
+        }, 5000);
+
+    })
+    .catch(error => {
+        console.error("Gallery error:", error);
+    });
+
+function showImage(index) {
+
+    imageElement.style.opacity = 0;
+
+    setTimeout(() => {
+
+        imageElement.src =
+            galleryImages[index].image;
+
+        captionElement.textContent =
+            galleryImages[index].caption || "";
+
+        imageElement.style.opacity = 1;
+
+    }, 300);
+}
+
+function nextImage() {
+
+    currentIndex++;
+
+    if (currentIndex >= galleryImages.length) {
+        currentIndex = 0;
     }
 
-    changeImage();
+    showImage(currentIndex);
+}
 
-    setInterval(changeImage,4000);
+function prevImage() {
 
-});
+    currentIndex--;
+
+    if (currentIndex < 0) {
+        currentIndex = galleryImages.length - 1;
+    }
+
+    showImage(currentIndex);
+}
