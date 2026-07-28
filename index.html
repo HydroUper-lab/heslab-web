@@ -2,256 +2,434 @@
 <html lang="id">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>HESLab | Hydro-Environmental System Laboratory</title>
+<title>HESLab | Hydro-Environmental System Laboratory</title>
 
-    <links/css/style.css
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    line-height:1.7;
+    color:#333;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background:#0b2948;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.menu{
+    display:flex;
+    list-style:none;
+}
+
+.menu li a{
+    color:white;
+    text-decoration:none;
+    padding:15px;
+}
+
+.menu li a:hover{
+    color:#7cc6ff;
+}
+
+/* HERO */
+
+.hero{
+    min-height:90vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.6),
+        rgba(0,0,0,.6)
+    ),
+    url("assets/images/gallery/01.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:900px;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:3.5rem;
+    margin:15px 0;
+}
+
+.hero p{
+    margin-bottom:20px;
+}
+
+/* BUTTON */
+
+.btn{
+    display:inline-block;
+    padding:12px 24px;
+    margin:5px;
+    border-radius:6px;
+    text-decoration:none;
+    background:#1e88e5;
+    color:white;
+}
+
+.secondary{
+    background:#e53935;
+}
+
+/* SECTION */
+
+.section{
+    padding:70px 8%;
+}
+
+.section-title{
+    text-align:center;
+    color:#0b2948;
+    margin-bottom:35px;
+}
+
+/* GALLERY */
+
+.gallery-container{
+    position:relative;
+    max-width:1200px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:10px;
+}
+
+.gallery-container img{
+    width:100%;
+    height:600px;
+    object-fit:cover;
+}
+
+.gallery-caption{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+
+    background:rgba(0,0,0,.55);
+    color:white;
+    padding:15px;
+}
+
+.gallery-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+
+    width:50px;
+    height:50px;
+
+    border:none;
+    background:rgba(0,0,0,.5);
+
+    color:white;
+    cursor:pointer;
+}
+
+.prev{
+    left:10px;
+}
+
+.next{
+    right:10px;
+}
+
+/* CARD */
+
+.card-container{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(280px,1fr));
+
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+
+    box-shadow:
+        0 2px 12px rgba(0,0,0,.08);
+}
+
+.card h3{
+    margin-bottom:12px;
+    color:#0b2948;
+}
+
+/* FOOTER */
+
+footer{
+    background:#0b2948;
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+    }
+
+    .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:2.2rem;
+    }
+
+    .gallery-container img{
+        height:300px;
+    }
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar">
+<nav class="navbar">
 
-        <div class="logo">
-            HESLab
-        </div>
+    <div class="logo">
+        HESLab
+    </div>
 
-        <ul class="menu">
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="index.html">Profil</a></li>
-            <li><a href="index.html">Riset</a></li>
-            <li><a href="index.html">Publikasi</a></li>
-            <li><a href="index.html">Data & Layanan</a></li>
-            <li><a href="index.html">Pengajaran</a></li>
-            <li><a href="berita-dan-opini/index.html"a></li>
-            <li><a href="index.html">Kontak</a></li>
-        </ul>
+    <ul class="menu">
+        <li>#Beranda</a></li>
+        <li>#Profil</a></li>
+        <li><Riset</a></li>
+        <li><a hrefasi</a></li>
+        <li><Data & Layanan</a></li>
+        <li>#Pengajaran</a></li>
+        <li><a href & Opini</a></li>
+        <li><Kontak</a></li>
+    </ul>
 
-    </nav>
+</nav>
 
-    <!-- Hero -->
-    <section class="hero">
+<section class="hero">
 
-        <div class="hero-content">
+<div class="hero-content">
 
-            <h3>
-                Berilmu, Bermanfaat, dan Berdampak
-            </h3>
+    <h3>
+        Berilmu, Bermanfaat, dan Berdampak
+    </h3>
 
-            <h1>
-                Hydro-Environmental System Laboratory
-            </h1>
+    <h1>
+        Hydro-Environmental System Laboratory
+    </h1>
 
-            <p>
-                Laboratorium riset Universitas Pertamina yang
-                berfokus pada pemodelan hidrologi,
-                manajemen risiko bencana air,
-                dan dampak perubahan iklim.
-            </p>
+    <p>
+        Laboratorium riset Universitas Pertamina yang berfokus pada
+        pemodelan hidrologi, manajemen risiko bencana air,
+        dan dampak perubahan iklim.
+    </p>
 
-            <div class="hero-buttons">
+    #
+       📊 Portal Data Hidrologi
+    </a>
 
-                <a class="btn"
-                    href="https://www.heslab-uper.com/riset-data/data"
-                    target="_blank">
-                    📊 Portal Data Hidrologi
-                </a>
+    <a class="btn secondary"
+   </a>
 
-                <a class="btn secondary"
-                    href="https://www.heslab-uper.com/riset-data/fews-heslab-uper"
-                    target="_blank">
-                    🚨 FEWS HESLab
-                </a>
+</div>
 
-            </div>
+</section>
 
-        </div>
+<section class="section">
 
-    </section>
+<h2 class="section-title">
+Galeri HESLab
+</h2>
 
-    <!-- Gallery -->
-    <section class="section">
+<div class="gallery-container">
 
-        <h2 class="section-title">
-            Galeri HESLab
-        </h2>
+    <img
+      id="galleryImage"
+      src="assets/images/gallery/01.jpg"
+      alt="Galeriaption">
 
-        <div class="gallery-container">
+      Kegiatan HESLab
 
-            <img
-                id="galleryImage"
-                src="assets/images/gallery/01.jpg"
-                alt="Galeri HESLab">
+    </div>
 
-            <div
-        <button
-                class="gallery-btn prev"
-                onclick="prevImage()">
-                ❮
-            </button>
+    <button class="gallery-btn prev"
+            onclick="prevImage()">
+            ❮
+    </button>
 
-            <button
-                class="gallery-btn next"
-                onclick="nextImage()">
-                ❯
-            </button>
+    <button class="gallery-btn next"
+            onclick="nextImage()">
+            ❯
+    </button>
 
-        </div>
+</div>
 
-    </section>
+</section>
 
-    <!-- Produk -->
-    <section class="section">
+<section class="section">
 
-        <h2 class="section-title">
-            Data dan Produk Riset
-        </h2>
+<h2 class="section-title">
+Data dan Produk Riset
+</h2>
 
-        <div class="card-container">
+<div class="card-container">
 
-            <div class="card">
-                <h3>🌧️ Data Hujan GSMaP</h3>
-                <p>
-                    Data hujan satelit GSMaP Indonesia untuk
-                    penelitian, hidrologi, klimatologi dan
-                    pengembangan model sumber daya air.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>📊 Laporan Curah Hujan</h3>
-                <p>
-                    Visualisasi dan analisis spasial-temporal
-                    karakteristik hujan Indonesia.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>🌊 Inflow Forecasting</h3>
-                <p>
-                    Prakiraan debit sungai dan inflow waduk
-                    berbasis model hidrologi.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>🚨 FEWS HESLab</h3>
-                <p>
-                    Flood Early Warning System berbasis data
-                    hujan satelit dan model hidrologi.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Tentang -->
-    <section class="section">
-
-        <h2 class="section-title">
-            Tentang HESLab
-        </h2>
-
+    <div class="card">
+        <h3>🌧️ Data Hujan GSMaP</h3>
         <p>
-            Hydro-Environmental System Laboratory (HESLab)
-            merupakan laboratorium riset Universitas Pertamina
-            yang berfokus pada pengembangan ilmu dan teknologi
-            di bidang hidrologi, hidrometeorologi,
-            sumber daya air, serta mitigasi risiko bencana
-            berbasis data dan pemodelan.
+            Data hujan satelit Indonesia untuk penelitian dan operasional.
         </p>
+    </div>
 
-        <br>
-
+    <div class="card">
+        <h3>📊 Laporan Curah Hujan</h3>
         <p>
-            HESLab mengintegrasikan data observasi,
-            data satelit, prakiraan iklim, dan model hidrologi
-            untuk mendukung penelitian, pendidikan,
-            serta pengambilan keputusan berbasis bukti.
+            Analisis spasial temporal karakteristik hujan Indonesia.
         </p>
+    </div>
 
-    </section>
-
-    <!-- Fokus Penelitian -->
-    <section class="section">
-
-        <h2 class="section-title">
-            Fokus Penelitian
-        </h2>
-
-        <div class="card-container">
-
-            <div class="card">
-                ☔ Analisis Hujan Satelit dan Variabilitas Iklim
-            </div>
-
-            <div class="card">
-                🌊 Pemodelan Hidrologi dan Prakiraan Debit
-            </div>
-
-            <div class="card">
-                🚨 Flood Forecasting dan FEWS
-            </div>
-
-            <div class="card">
-                🌍 Analisis Risiko Banjir dan Bencana Air
-            </div>
-
-            <div class="card">
-                🛰️ Sistem Informasi Hidrologi
-            </div>
-
-            <div class="card">
-                🤖 AI dan Data Science Lingkungan
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Aktivitas -->
-    <section class="section">
-
-        <h2 class="section-title">
-            Aktivitas dan Pengembangan Terkini
-        </h2>
-
-        <div class="card-container">
-
-            <div class="card">🌧️ Data Hujan GSMaP</div>
-            <div class="card">🌊 Real-Time Forecasting</div>
-            <div class="card">📈 Seasonal Forecast</div>
-            <div class="card">🚨 FEWS HESLab</div>
-            <div class="card">🛰️ Remote Sensing</div>
-            <div class="card">🌏 Climate Change Impact</div>
-
-        </div>
-
-    </section>
-
-    <!-- Footer -->
-    <footer>
-
-        <h3>
-            Hydro-Environmental System Laboratory
-        </h3>
-
+    <div class="card">
+        <h3>🌊 Inflow Forecasting</h3>
         <p>
-            Universitas Pertamina
+            Prakiraan debit sungai dan inflow waduk.
         </p>
+    </div>
 
+    <div class="card">
+        <h3>🚨 FEWS HESLab</h3>
         <p>
-            Menghubungkan Data, Model, dan Keputusan
+            Flood Early Warning System berbasis data hujan satelit.
         </p>
+    </div>
 
-    </footer>
+</div>
 
-    assets/js/gallery.jsscript>
+</section>
+
+<footer>
+
+<h3>
+Hydro-Environmental System Laboratory
+</h3>
+
+<p>
+Universitas Pertamina
+</p>
+
+<p>
+Menghubungkan Data, Model, dan Keputusan
+</p>
+
+</footer>
+
+<script>
+
+const gallery = [
+
+{
+image:"assets/images/gallery/01.jpg",
+caption:"Kegiatan Survei Lapangan HESLab"
+},
+
+{
+image:"assets/images/gallery/02.jpg",
+caption:"Workshop dan Diskusi Penelitian"
+},
+
+{
+image:"assets/images/gallery/03.jpg",
+caption:"Pengembangan Model Hidrologi"
+}
+
+];
+
+let currentIndex = 0;
+
+const imageElement =
+document.getElementById("galleryImage");
+
+const captionElement =
+document.getElementById("galleryCaption");
+
+function showImage(index){
+
+    imageElement.src =
+        gallery[index].image;
+
+    captionElement.innerHTML =
+        gallery[index].caption;
+}
+
+function nextImage(){
+
+    currentIndex++;
+
+    if(currentIndex >= gallery.length){
+        currentIndex = 0;
+    }
+
+    showImage(currentIndex);
+}
+
+function prevImage(){
+
+    currentIndex--;
+
+    if(currentIndex < 0){
+        currentIndex = gallery.length - 1;
+    }
+
+    showImage(currentIndex);
+}
+
+setInterval(nextImage,5000);
+
+</script>
 
 </body>
-
 </html>
