@@ -1,70 +1,74 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Hydro-Environmental System Laboratory</title>
 
-assets/css/style.css
+<link rel="stylesheet" href="assets/css/style.:0;
+    font-family:Segoe UI, Arial, sans-serif;
+    line-height:1.6;
+}
 
-<style>
+nav{
+    position:sticky;
+    top:0;
+    background:#0b2948;
+    z-index:1000;
+}
 
-body{
+nav ul{
+    display:flex;
+    list-style:none;
     margin:0;
-    font-family:Segoe UI,sans-serif;
-    background:#f5f9fc;
-    color:#1f2933;
+    padding:0;
 }
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+nav ul li a{
+    display:block;
+    color:white;
+    padding:18px;
+    text-decoration:none;
 }
 
-section{
-    padding:80px 0;
+nav ul li a:hover{
+    background:#13406d;
 }
 
 .hero{
-    background:linear-gradient(135deg,#003049,#0077b6);
+    background:linear-gradient(rgba(0,0,0,.55),
+              rgba(0,0,0,.55)),
+              url('assets/images/gallery/01.jpg');
+    background-size:cover;
+    background-position:center;
     color:white;
-    padding:100px 0;
+    text-align:center;
+    padding:120px 20px;
 }
 
 .hero h1{
     font-size:3rem;
-    margin-bottom:15px;
+    margin-bottom:10px;
 }
 
 .hero p{
-    max-width:800px;
-    line-height:1.8;
-}
-
-.button-group{
-    margin-top:30px;
+    max-width:900px;
+    margin:auto;
 }
 
 .btn{
     display:inline-block;
-    padding:12px 24px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-    margin-right:10px;
-}
-
-.btn-primary{
-    background:#00b4d8;
-    color:#002233;
-}
-
-.btn-outline{
-    border:1px solid white;
+    margin:10px;
+    padding:12px 20px;
+    background:#1e88e5;
     color:white;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+.section{
+    padding:60px 10%;
 }
 
 .section-title{
@@ -72,235 +76,230 @@ section{
     margin-bottom:40px;
 }
 
-.section-title h2{
-    color:#003049;
+.carousel{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:10px;
 }
 
-.cards{
+.carousel img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+}
+
+.card-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+    gap:20px;
 }
 
 .card{
-    background:white;
+    border:1px solid #ddd;
     padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    border-radius:10px;
 }
 
-.gallery-placeholder{
-    background:white;
-    text-align:center;
-    padding:60px;
-    border-radius:15px;
+.card h3{
+    margin-top:0;
 }
 
-footer{
-    background:#001d2c;
+.footer{
+    background:#0b2948;
     color:white;
     text-align:center;
-    padding:40px;
+    padding:30px;
 }
-
-@media(max-width:768px){
-
-.hero h1{
-    font-size:2rem;
-}
-
-.btn{
-    display:block;
-    margin-bottom:10px;
-    text-align:center;
-}
-
-section{
-    padding:50px 0;
-}
-
-}
-
 </style>
 
 </head>
-
 <body>
 
-<!-- HERO -->
+<nav>
+<ul>
+<li>/Beranda</a></li>
+<li>/profil/Profil</a></li>
+<li><riset/Riset</a></li>
+<li>/publikasi/Publikasi</a></li>
+<li>/data-dan-layanan/Data & Layanan</a></li>
+<li>/pengajaran/Pengajaran</a></li>
+<li>/berita-dan-opini/Berita & Opini</a></li>
+<li><kontak/Kontak</a></li>
+</ul>
+</nav>
 
 <section class="hero">
 
-<div class="container">
+<h2>Berilmu, Bermanfaat, dan Berdampak</h2>
 
-<p><strong>Berilmu, Bermanfaat, dan Berdampak</strong></p>
-
-<h1>
-Hydro-Environmental System Laboratory
-</h1>
+<h1>Hydro-Environmental System Laboratory</h1>
 
 <p>
-Laboratorium riset Universitas Pertamina yang berfokus
-pada hidrologi, sumber daya air, pemodelan lingkungan,
-manajemen risiko banjir, dan dampak perubahan iklim.
+Laboratorium riset Universitas Pertamina yang berfokus pada
+pemodelan hidrologi, manajemen risiko bencana air, dan dampak
+perubahan iklim.
 </p>
 
-<div class="button-group">
-
-<a href="riset-data/" class="btn btn-primarySLab
+<a class="btn"
+href="https://www.heslab-uper.com/riset-data/data">
+📊 Portal Data Hidrologi
 </a>
 
-</div>
+<a class="btn"
+href="https://www.heslab-uper.com/riset-data/fews-heslab-uper">
+🚨 FEWS HESLab
+</a>
 
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Galeri HESLab
+</h2>
+
+<div class="carousel">
+assets/images/gallery/01.jpg
 </div>
 
 </section>
 
-<!-- ABOUT -->
+<section class="section">
 
-<section>
+<h2 class="section-title">
+Data dan Produk Riset
+</h2>
 
-<div class="container">
-
-<div class="section-title">
-
-<h2>Tentang HESLab</h2>
-
-<p>
-Menghubungkan data, model, dan keputusan.
-</p>
-
-</div>
-
-<p>
-Hydro-Environmental System Laboratory (HESLab)
-mengintegrasikan data hidrometeorologi, penginderaan jauh,
-pemodelan hidrologi, dan sistem informasi untuk mendukung
-penelitian, pengajaran, dan pengambilan keputusan berbasis bukti.
-</p>
-
-</div>
-
-</section>
-
-<!-- RISET -->
-
-<section>
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>Data dan Produk Riset</h2>
-
-</div>
-
-<div class="cards">
+<div class="card-grid">
 
 <div class="card">
 <h3>🌧️ Data Hujan GSMaP</h3>
-<p>Data hujan satelit Indonesia.</p>
+<p>
+Data hujan satelit GSMaP Indonesia untuk penelitian,
+hidrologi dan klimatologi.
+</p>
 </div>
 
 <div class="card">
-<h3>📊 Karakteristik Hujan</h3>
-<p>Analisis spasial dan temporal hujan.</p>
+<h3>📊 Laporan Curah Hujan</h3>
+<p>
+Analisis spasial dan temporal curah hujan Indonesia.
+</p>
 </div>
 
 <div class="card">
 <h3>🌊 Inflow Forecasting</h3>
-<p>Prakiraan debit dan inflow waduk.</p>
+<p>
+Prakiraan debit sungai dan inflow waduk berbasis model
+hidrologi.
+</p>
 </div>
 
 <div class="card">
 <h3>🚨 FEWS HESLab</h3>
-<p>Flood Early Warning System.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- AKTIVITAS -->
-
-<section>
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>Aktivitas Terkini</h2>
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-🛰️ Pembaruan Data GSMaP
-</div>
-
-<div class="card">
-🌊 Forecast Debit Real-Time
-</div>
-
-<div class="card">
-🌏 Analisis Perubahan Iklim
-</div>
-
-<div class="card">
-🚨 Pengembangan FEWS
-</div>
-
+<p>
+Flood Early Warning System berbasis data hujan satelit
+dan model hidrologi.
+</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- GALLERY -->
+<section class="section">
 
-<section>
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>Galeri</h2>
+<h2 class="section-title">
+Tentang HESLab
+</h2>
 
 <p>
-Dokumentasi kegiatan laboratorium.
+Hydro-Environmental System Laboratory (HESLab)
+merupakan laboratorium riset Universitas Pertamina yang
+berfokus pada pengembangan ilmu dan teknologi di bidang
+hidrologi, hidrometeorologi, sumber daya air, serta
+mitigasi risiko bencana berbasis data dan pemodelan.
 </p>
-
-</div>
-
-<div class="gallery-placeholder">
 
 <p>
-Gallery akan dimuat dari
-<code>data/images.json</code>
+HESLab mengintegrasikan data observasi, data satelit,
+prakiraan iklim, dan model hidrologi untuk mendukung
+penelitian, pendidikan, serta pengambilan keputusan
+berbasis bukti.
 </p>
 
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Fokus Penelitian
+</h2>
+
+<div class="card-grid">
+
+<div class="card">
+☔ Analisis Hujan Satelit dan Variabilitas Iklim
+</div>
+
+<div class="card">
+🌊 Pemodelan Hidrologi dan Prakiraan Debit
+</div>
+
+<div class="card">
+🚨 Flood Forecasting dan FEWS
+</div>
+
+<div class="card">
+🌍 Risiko Banjir dan Bencana Air
+</div>
+
+<div class="card">
+🛰️ Sistem Informasi Hidrologi
+</div>
+
+<div class="card">
+🤖 AI dan Data Science Lingkungan
 </div>
 
 </div>
 
 </section>
 
-<!-- FOOTER -->
+<section class="section">
 
-<footer>
+<h2 class="section-title">
+Aktivitas dan Pengembangan Terkini
+</h2>
+
+<div class="card-grid">
+
+<div class="card">🌧️ Data Hujan GSMaP</div>
+<div class="card">🌊 Real-Time Forecasting</div>
+<div class="card">📈 Seasonal Forecast</div>
+<div class="card">🚨 FEWS HESLab</div>
+<div class="card">🛰️ Remote Sensing</div>
+<div class="card">🌏 Climate Change Impact</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
 
 <h3>Hydro-Environmental System Laboratory</h3>
 
 <p>Universitas Pertamina</p>
 
 <p>
-Hydrology • Water Resources • Flood Risk • Climate Change
+Menghubungkan Data, Model, dan Keputusan
 </p>
 
 </footer>
+
+assets/js/gallery.jsscript>
 
 </body>
 </html>
