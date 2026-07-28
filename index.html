@@ -2,682 +2,635 @@
 <html lang="id">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>
-HESLab | Hydro-Environmental System Laboratory
-</title>
-
-<style>
-
-:root{
-    --primary:#0b2948;
-    --secondary:#1e88e5;
-    --light:#f5f7fa;
-    --text:#333;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Segoe UI',sans-serif;
-    color:var(--text);
-    background:#fff;
-}
-
-a{
-    text-decoration:none;
-}
-
-/* =====================================
-   NAVIGATION
-===================================== */
-
-.navbar{
-
-    position:fixed;
-    top:0;
-    left:0;
-
-    width:100%;
-
-    background:rgba(11,41,72,.95);
-
-    backdrop-filter:blur(8px);
-
-    z-index:999;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:15px 40px;
-}
-
-.logo{
-    color:white;
-    font-size:1.4rem;
-    font-weight:700;
-}
-
-.menu{
-    display:flex;
-    list-style:none;
-    gap:25px;
-}
-
-.menu a{
-    color:white;
-}
-
-.menu a:hover{
-    color:#7dc4ff;
-}
-
-/* =====================================
-   HERO
-===================================== */
-
-.hero{
-
-    min-height:100vh;
-
-    background:
-    linear-gradient(
-        rgba(0,0,0,.55),
-        rgba(0,0,0,.55)
-    ),
-    url("assets/images/gallery/01.jpg");
-
-    background-size:cover;
-    background-position:center;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-    color:white;
-
-    padding:120px 20px 50px;
-}
-
-.hero-content{
-    max-width:1000px;
-}
-
-.hero h2{
-    font-weight:300;
-}
-
-.hero h1{
-    margin:20px 0;
-    font-size:4rem;
-}
-
-.hero p{
-    font-size:1.2rem;
-    line-height:1.8;
-}
-
-.hero-buttons{
-    margin-top:30px;
-}
-
-.btn{
-
-    display:inline-block;
-
-    padding:14px 25px;
-
-    margin:5px;
-
-    border-radius:8px;
-
-    background:#1e88e5;
-
-    color:white;
-}
-
-.btn-danger{
-    background:#e53935;
-}
-
-/* =====================================
-   SECTION
-===================================== */
-
-.section{
-    padding:80px 8%;
-}
-
-.section-title{
-
-    text-align:center;
-
-    color:var(--primary);
-
-    margin-bottom:40px;
-}
-
-/* =====================================
-   QUICK ACCESS
-===================================== */
-
-.quick-links{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-
-    gap:20px;
-}
-
-.quick-link{
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:15px;
-
-    box-shadow:
-    0 3px 15px rgba(0,0,0,.08);
-
-    text-align:center;
-}
-
-/* =====================================
-   GALLERY
-===================================== */
-
-.gallery-container{
-
-    position:relative;
-
-    max-width:1200px;
-
-    margin:auto;
-
-    overflow:hidden;
-
-    border-radius:15px;
-}
-
-.gallery-container img{
-
-    width:100%;
-    height:650px;
-
-    object-fit:cover;
-}
-
-.gallery-overlay{
-
-    position:absolute;
-
-    left:0;
-    right:0;
-    bottom:0;
-
-    padding:30px;
-
-    color:white;
-
-    background:
-    linear-gradient(
-      transparent,
-      rgba(0,0,0,.8)
-    );
-}
-
-.gallery-btn{
-
-    position:absolute;
-
-    top:50%;
-
-    transform:
-    translateY(-50%);
-
-    width:50px;
-    height:50px;
-
-    border:none;
-
-    background:
-    rgba(0,0,0,.5);
-
-    color:white;
-
-    cursor:pointer;
-}
-
-.prev{
-    left:15px;
-}
-
-.next{
-    right:15px;
-}
-
-/* =====================================
-   CARDS
-===================================== */
-
-.card-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-
-    gap:25px;
-}
-
-.card{
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:15px;
-
-    box-shadow:
-    0 5px 15px rgba(0,0,0,.08);
-
-    transition:.3s;
-}
-
-.card:hover{
-
-    transform:
-    translateY(-5px);
-}
-
-.card h3{
-    color:var(--primary);
-    margin-bottom:15px;
-}
-
-/* =====================================
-   NEWS
-===================================== */
-
-.news-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(300px,1fr));
-
-    gap:25px;
-}
-
-/* =====================================
-   FOOTER
-===================================== */
-
-footer{
-
-    background:var(--primary);
-
-    color:white;
-
-    text-align:center;
-
-    padding:60px 20px;
-}
-
-.footer-links{
-
-    margin-top:20px;
-}
-
-.footer-links a{
-
-    color:white;
-
-    margin:0 10px;
-}
-
-/* =====================================
-   MOBILE
-===================================== */
-
-@media(max-width:768px){
-
-    .navbar{
-
-        flex-direction:column;
-        gap:10px;
-    }
-
-    .menu{
-
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .hero h1{
-
-        font-size:2.2rem;
-    }
-
-    .gallery-container img{
-
-        height:320px;
-    }
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HESLab | Hydro-Environmental System Laboratory</title>
+
+    <meta name="description"
+        content="Hydro-Environmental System Laboratory (HESLab) Universitas Pertamina">
+
+    <style>
+        :root {
+            --primary: #0b2948;
+            --secondary: #1e88e5;
+            --light: #f5f7fa;
+            --text: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", sans-serif;
+            color: var(--text);
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ===================
+           NAVBAR
+        =================== */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(11, 41, 72, .95);
+            backdrop-filter: blur(6px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .menu a {
+            color: white;
+            transition: .3s;
+        }
+
+        .menu a:hover {
+            color: #7dc4ff;
+        }
+
+        /* ===================
+           HERO
+        =================== */
+
+        .hero {
+            min-height: 100vh;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, .55),
+                    rgba(0, 0, 0, .55)
+                ),
+                url("assets/images/gallery/01.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+
+            padding: 120px 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 20px 0;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 24px;
+            border-radius: 8px;
+            margin: 5px;
+            color: white;
+            background: var(--secondary);
+        }
+
+        .btn-danger {
+            background: #e53935;
+        }
+
+        /* ===================
+           SECTION
+        =================== */
+
+        .section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 40px;
+        }
+
+        /* ===================
+           QUICK LINKS
+        =================== */
+
+        .quick-links {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .quick-link {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, .08);
+
+            transition: .3s;
+        }
+
+        .quick-link:hover {
+            transform: translateY(-5px);
+        }
+
+        /* ===================
+           GALLERY
+        =================== */
+
+        .gallery-container {
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 15px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, .15);
+        }
+
+        .gallery-container img {
+            width: 100%;
+            height: 650px;
+            object-fit: cover;
+
+            opacity: 1;
+
+            transition:
+                opacity 1s ease-in-out,
+                transform 8s linear;
+        }
+
+        .gallery-container img.active {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            padding: 30px;
+            color: white;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(0, 0, 0, .85)
+                );
+        }
+
+        .gallery-btn {
+            position: absolute;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 50px;
+            height: 50px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: rgba(0, 0, 0, .5);
+
+            color: white;
+            font-size: 1.2rem;
+
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        /* ===================
+           CARD
+        =================== */
+
+        .card-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+
+            border: 1px solid #eee;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, .08);
+
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 30px rgba(0, 0, 0, .12);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* ===================
+           FOOTER
+        =================== */
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+        }
+
+        /* ===================
+           MOBILE
+        =================== */
+
+        @media(max-width:768px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .gallery-container img {
+                height: 320px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
+    <nav class="navbar">
 
-<nav class="navbar">
+        <div class="logo">
+            HESLab
+        </div>
 
-<div class="logo">
-HESLab
-</div>
+        <ul class="menu">
+            <li>#berandaBeranda</a></li>
+            <li>#profilProfil</a></li>
+            <li>#risetRiset</a></li>
+            <li>#produkProduk</a></li>
+            <li>#beritaBerita</a></li>
+            <li>#kontakKontak</a></li>
+        </ul>
 
-<ul class="menu">
+    </nav>
 
-<li>#Beranda</a></li>
-<li>#Profil</a></li>
-<li>#Riset</a></li>
-<li>#Publikasi</a></li>
-<li>#Data & Layanan</a></li>
-<li>#Pengajaran</a></li>
-<li>#Berita & Opini</a></li>
-<li>#Kontak</a></li>
+    <section class="hero" id="beranda">
 
-</ul>
+        <div class="hero-content">
 
-</nav>
+            <h2>
+                Berilmu, Bermanfaat, dan Berdampak
+            </h2>
 
-<section class="hero">
+            <h1>
+                Hydro-Environmental System Laboratory
+            </h1>
 
-<div class="hero-content">
+            <p>
+                Hidrologi • Hidrometeorologi • Sumber Daya Air •
+                Flood Forecasting • FEWS • Climate Change
+            </p>
 
-<h2>
-Berilmu, Bermanfaat, dan Berdampak
-</h2>
+            <div class="hero-buttons">
 
-<h1>
-Hydro-Environmental System Laboratory
-</h1>
+                #
+                    📊 Portal Data
+                </a>
 
-<p>
-Laboratorium riset Universitas Pertamina yang berfokus pada
-hidrologi, hidrometeorologi, sumber daya air,
-mitigasi risiko bencana, dan perubahan iklim.
-</p>
+                #
+                    🚨 FEWS HESLab
+                </a>
 
-<div class="hero-buttons">
+            </div>
 
-#
-📊 Portal Data Hidrologi
-</a>
+        </div>
 
-#
-🚨 FEWS HESLab
-</a>
+    </section>
 
-</div>
+    <section class="section">
 
-</div>
+        <h2 class="section-title">
+            Akses Cepat
+        </h2>
 
-</section>
+        <div class="quick-links">
 
-</header>
+            <div class="quick-link">📊 Portal Data</div>
+            <div class="quick-link">🚨 FEWS HESLab</div>
+            <div class="quick-link">🌊 Inflow Forecasting</div>
+            <div class="quick-link">🌧️ Curah Hujan</div>
 
-<main>
+        </div>
 
-<section class="section">
+    </section>
 
-<h2 class="section-title">
-Akses Cepat
-</h2>
+    <section class="section">
 
-<div class="quick-links">
+        <h2 class="section-title">
+            Galeri HESLab
+        </h2>
 
-<div class="quick-link">
-📊 Portal Data
-</div>
+        <div class="gallery-container">
 
-<div class="quick-link">
-🚨 FEWS HESLab
-</div>
+            
 
-<div class="quick-link">
-🌊 Inflow Forecasting
-</div>
+            <div class="gallery-overlay">
+                <h3 id="galleryTitle"></h3>
+            </div>
 
-<div class="quick-link">
-🌧️ Laporan Curah Hujan
-</div>
+            <button
+                class="gallery-btn prev"
+                onclick="prevImage()">
+                ❮
+            </button>
 
-</div>
+            <button
+                class="gallery-btn next"
+                onclick="nextImage()">
+                ❯
+            </button>
 
-</section>
+        </div>
 
-<section class="section">
+    </section>
 
-<h2 class="section-title">
-Galeri HESLab
-</h2>
+    <section class="section" id="produk">
 
-<div class="gallery-container">
+        <h2 class="section-title">
+            Data dan Produk Riset
+        </h2>
 
+        <div class="card-grid">
 
+            <div class="card">
+                <h3>🌧️ Data Hujan GSMaP</h3>
+                <p>Data hujan satelit Indonesia.</p>
+            </div>
 
-<div class="gallery-overlay">
+            <div class="card">
+                <h3>📊 Curah Hujan Harian</h3>
+                <p>Analisis curah hujan Indonesia.</p>
+            </div>
 
-<h3 id="galleryTitle"></h3>
+            <div class="card">
+                <h3>🌊 Inflow Forecasting</h3>
+                <p>Prakiraan debit sungai.</p>
+            </div>
 
-</div>
+            <div class="card">
+                <h3>🚨 FEWS HESLab</h3>
+                <p>Flood Early Warning System.</p>
+            </div>
 
-<button
-class="gallery-btn prev"
-onclick="prevImage()">
-❮
-</button>
+        </div>
 
-<button
-class="gallery-btn next"
-onclick="nextImage()">
-❯
-</button>
+    </section>
 
-</div>
+    <section class="section" id="profil">
 
-</section>
+        <h2 class="section-title">
+            Tentang HESLab
+        </h2>
 
-<section class="section">
+        <p>
+            Hydro-Environmental System Laboratory (HESLab)
+            merupakan laboratorium riset yang fokus pada
+            hidrologi, hidrometeorologi, sumber daya air,
+            pemodelan banjir, forecasting, dan perubahan iklim.
+        </p>
 
-<h2 class="section-title">
-Data dan Produk Riset
-</h2>
+    </section>
 
-<div class="card-grid">
+    <section class="section" id="riset">
 
-<div class="card">
-<h3>🌧️ Data Hujan GSMaP</h3>
-<p>Data hujan satelit Indonesia.</p>
-</div>
+        <h2 class="section-title">
+            Fokus Penelitian
+        </h2>
 
-<div class="card">
-<h3>📊 Curah Hujan Harian</h3>
-<p>Analisis curah hujan Indonesia.</p>
-</div>
+        <div class="card-grid">
 
-<div class="card">
-<h3>🌊 Inflow Forecasting</h3>
-<p>Prakiraan debit sungai.</p>
-</div>
+            <div class="card">☔ Analisis Hujan Satelit</div>
+            <div class="card">🌊 Pemodelan Hidrologi</div>
+            <div class="card">🚨 Flood Forecasting & FEWS</div>
+            <div class="card">🌍 Risiko Banjir</div>
+            <div class="card">🛰️ Sistem Informasi Hidrologi</div>
+            <div class="card">🤖 AI & Data Science</div>
 
-<div class="card">
-<h3>🚨 FEWS HESLab</h3>
-<p>Flood Early Warning System.</p>
-</div>
+        </div>
 
-</div>
+    </section>
 
-</section>
+    <section class="section" id="berita">
 
-<section class="section">
+        <h2 class="section-title">
+            Berita Terbaru
+        </h2>
 
-<h2 class="section-title">
-Tentang HESLab
-</h2>
+        <div class="news-grid">
 
-<p>
-Hydro-Environmental System Laboratory (HESLab) merupakan
-laboratorium riset Universitas Pertamina yang fokus pada
-hidrologi, hidrometeorologi, sumber daya air,
-serta mitigasi risiko bencana berbasis data dan pemodelan.
-</p>
+            <div class="card">
+                <h3>Workshop FEWS</h3>
+                <p>Pengembangan sistem peringatan dini banjir.</p>
+            </div>
 
-</section>
+            <div class="card">
+                <h3>Publikasi Baru</h3>
+                <p>Artikel terbaru tentang forecasting debit.</p>
+            </div>
 
-<section class="section">
+            <div class="card">
+                <h3>Field Survey</h3>
+                <p>Kegiatan survei dan validasi model.</p>
+            </div>
 
-<h2 class="section-title">
-Fokus Penelitian
-</h2>
+        </div>
 
-<div class="card-grid">
+    </section>
 
-<div class="card">☔ Analisis Hujan Satelit</div>
-<div class="card">🌊 Pemodelan Hidrologi</div>
-<div class="card">🚨 Flood Forecasting & FEWS</div>
-<div class="card">🌍 Risiko Banjir</div>
-<div class="card">🛰️ Sistem Informasi Hidrologi</div>
-<div class="card">🤖 AI dan Data Science</div>
+    <footer id="kontak">
 
-</div>
+        <h3>
+            Hydro-Environmental System Laboratory
+        </h3>
 
-</section>
+        <p>
+            Universitas Pertamina
+        </p>
 
-<section class="section">
+        <p>
+            Menghubungkan Data, Model, dan Keputusan
+        </p>
 
-<h2 class="section-title">
-Berita Terbaru
-</h2>
+    </footer>
 
-<div class="news-grid">
+    <script>
 
-<div class="card">
-<h3>Workshop FEWS</h3>
-<p>Pengembangan sistem peringatan dini banjir.</p>
-</div>
+        let gallery = [];
+        let currentIndex = 0;
 
-<div class="card">
-<h3>Publikasi Baru</h3>
-<p>Artikel terbaru tentang forecasting debit.</p>
-</div>
+        const imageElement =
+            document.getElementById("galleryImage");
 
-<div class="card">
-<h3>Field Survey</h3>
-<p>Kegiatan survei lapangan dan validasi model.</p>
-</div>
+        const titleElement =
+            document.getElementById("galleryTitle");
 
-</div>
+        fetch("assets/data/gallery.json")
+            .then(response => response.json())
+            .then(data => {
 
-</section>
+                gallery = data;
 
-</main>
+                if (gallery.length > 0) {
 
-<footer>
+                    showImage(0);
 
-<h3>
-Hydro-Environmental System Laboratory
-</h3>
+                    setInterval(() => {
+                        nextImage();
+                    }, 4000);
 
-<p>
-Universitas Pertamina
-</p>
+                }
 
-<p>
-Menghubungkan Data, Model, dan Keputusan
-</p>
+            })
+            .catch(error => {
+                console.error(error);
+            });
 
-<div class="footer-links">
+        function showImage(index) {
 
-#Google Scholar</a>
-#ORCID</a>
-#GitHub</a>
+            imageElement.style.opacity = 0;
 
-</div>
+            setTimeout(() => {
 
-</footer>
+                imageElement.src =
+                    gallery[index].image;
 
-<script>
+                imageElement.alt =
+                    gallery[index].title;
 
-let gallery = [];
-let currentIndex = 0;
+                titleElement.textContent =
+                    gallery[index].title;
 
-const imageElement =
-document.getElementById("galleryImage");
+                imageElement.style.opacity = 1;
 
-const titleElement =
-document.getElementById("galleryTitle");
+                imageElement.classList.remove("active");
 
-fetch("assets/data/gallery.json")
-.then(response => response.json())
-.then(data => {
+                void imageElement.offsetWidth;
 
-    gallery = data;
+                imageElement.classList.add("active");
 
-    if(gallery.length === 0){
-        return;
-    }
+            }, 300);
+        }
 
-    showImage(0);
+        function nextImage() {
 
-    setInterval(nextImage,5000);
-});
+            if (gallery.length === 0) return;
 
-function showImage(index){
+            currentIndex =
+                (currentIndex + 1) %
+                gallery.length;
 
-    imageElement.src =
-    gallery[index].image;
+            showImage(currentIndex);
+        }
 
-    titleElement.textContent =
-    gallery[index].title;
-}
+        function prevImage() {
 
-function nextImage(){
+            if (gallery.length === 0) return;
 
-    currentIndex =
-    (currentIndex + 1) %
-    gallery.length;
+            currentIndex =
+                (currentIndex - 1 + gallery.length) %
+                gallery.length;
 
-    showImage(currentIndex);
-}
+            showImage(currentIndex);
+        }
 
-function prevImage(){
-
-    currentIndex =
-    (currentIndex - 1 +
-    gallery.length) %
-    gallery.length;
-
-    showImage(currentIndex);
-}
-
-</script>
+    </script>
 
 </body>
+
 </html>
